@@ -1,9 +1,10 @@
-﻿var core = require('./core');
-core.editorCanvas.createCanvas('\\sqrt[111]{2}');
-function start(){
+﻿var core = require('../lib/core');
+function createFomula(latex){
+	core.editorCanvas.createCanvas(latex);
 	var fs = require('fs')
-	  , out = fs.createWriteStream(__dirname + '/text.png')
+	  , out = fs.createWriteStream('./static/text.png')
 	  , stream =  core.editorCanvas.canvas.pngStream();
+
 
 	stream.on('data', function(chunk){
 	  out.write(chunk);
@@ -14,4 +15,4 @@ function start(){
 	});
 }
 
-exports.start  = start;
+exports.createFomula  = createFomula;

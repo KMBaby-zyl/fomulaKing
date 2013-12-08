@@ -1,2 +1,2 @@
-node example.js
+node app.js
 pause

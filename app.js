@@ -2,9 +2,9 @@
 var fs = require('fs');
 var url = require('url');
 var path = require('path');
-var picture = require('./picture');
+var fomulaKing = require('./node/fomulaKing');
 
-picture.start();
+fomulaKing.createFomula('\\sqrt[math]{2}');
  http.createServer(function(req, res) {
 	var pathname=__dirname+url.parse(req.url).pathname;
     if (path.extname(pathname)=="") {
@@ -15,7 +15,6 @@ picture.start();
     }
     path.exists(pathname,function(exists){
     	if(exists){
-    		console.log(path.extname(pathname));
 	        switch(path.extname(pathname)){
 				case ".html":
 	                res.writeHead(200, {"Content-Type": "text/html"});
@@ -40,7 +39,7 @@ picture.start();
 	            case ".png":
 	                res.writeHead(200, {"Content-Type": "image/png"});
 	                fs.readFile(pathname,function (err, data) {//读取内容
-			            if (err) throw err;
+		          		if (err) throw err;
 			            res.write(data);
 			            res.end();
 			        });
