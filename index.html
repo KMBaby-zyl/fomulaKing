@@ -3,9 +3,31 @@
 <html lang="zh-CN">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
     <title>获得图片</title>
 </head>
 <body>
-  <img src="./static/text.png"></img>
+	<h1>node版fomulaKing 请输入latex</h1>
+	<textarea id="latex" cols="80" rows="8"></textarea>
+	<br>
+	<input id="renderbutton" type="submit" class="greybutton" value="Render Equation" title="Click to see your equation rendered below">
+	<br>
+  <img id="latexImg" src="./static/img/text.png"></img>
+    <script type="text/javascript" src="./static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+    $(function($){
+    	$("#renderbutton").click(function(){
+    		var latex = $("#latex").val();
+    		$.ajax({
+    			type:"get",
+    			url:"/render?latex="+latex,
+    			success:function(data){
+    				var date = new Date();
+    				$("#latexImg")[0].src = "./static/img/text.png?"+date.getTime();
+    			}
+    		});
+    	});
+    });
+    </script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 function createFomula(latex){
 	core.editorCanvas.createCanvas(latex);
 	var fs = require('fs')
-	  , out = fs.createWriteStream('./static/text.png')
+	  , out = fs.createWriteStream('./static/img/text.png')
 	  , stream =  core.editorCanvas.canvas.pngStream();
 
 
