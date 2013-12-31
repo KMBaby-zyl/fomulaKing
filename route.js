@@ -1,7 +1,7 @@
 ﻿var fs = require('fs');
 var url = require('url');
 var path = require('path');
-var fomulaKing = require('./node/fomulaKing');
+var fomulaKing = require('./lib/fomulaKing');
 var routes = [];
 
 var use = function(path,action){
