@@ -41,3 +41,6 @@ C:\path\to\node\node_modules\canvas\build\Release> node.exe
 
 参考说明:
 https://github.com/LearnBoost/node-canvas/wiki/Installation---Windows
+
+原版其实是html5 canvas版本，用excanvas兼容了ie
+如果有人需要的话请留言，我会放到git上。
